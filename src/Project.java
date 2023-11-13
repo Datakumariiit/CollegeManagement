@@ -91,10 +91,12 @@ public class Project extends JFrame implements ActionListener {
 
         JMenuItem examinationdetails = new JMenuItem("Examination Results");
         examinationdetails.setBackground(Color.WHITE);
+        examinationdetails.addActionListener(this);
         exam.add(examinationdetails);
 
         JMenuItem entermarks = new JMenuItem("Enter Marks");
         entermarks.setBackground(Color.WHITE);
+        entermarks.addActionListener(this);
         exam.add(entermarks);
 
 
@@ -107,10 +109,12 @@ public class Project extends JFrame implements ActionListener {
 
         JMenuItem updatefacultyinfo = new JMenuItem("Update Faculty Details");
         updatefacultyinfo.setBackground(Color.WHITE);
+        updatefacultyinfo.addActionListener(this);
         updateinfo.add(updatefacultyinfo);
 
         JMenuItem updatestudentinfo = new JMenuItem("Update Student Details");
         updatestudentinfo.setBackground(Color.WHITE);
+        updatestudentinfo.addActionListener(this);
         updateinfo.add(updatestudentinfo);
 
         //fee
@@ -121,6 +125,7 @@ public class Project extends JFrame implements ActionListener {
 
         JMenuItem feestructure = new JMenuItem("Fee Strucute");
         feestructure.setBackground(Color.WHITE);
+        feestructure.addActionListener(this);
         fee.add(feestructure);
 
         JMenuItem feeform = new JMenuItem("Student Fee Form");
@@ -142,6 +147,18 @@ public class Project extends JFrame implements ActionListener {
         calc.setBackground(Color.WHITE);
         calc.addActionListener(this);
         utility.add(calc);
+
+        JMenu about = new JMenu("About");
+        about.setForeground(Color.BLUE);
+        about.addActionListener(this);
+        mb.add(about);
+
+
+        JMenuItem ab = new JMenuItem("About");
+        ab.setBackground(Color.WHITE);
+        ab.addActionListener(this);
+        about.add(ab);
+
 
         //exit
 
@@ -206,10 +223,24 @@ public class Project extends JFrame implements ActionListener {
         else if(msg.equals("Student Leave Details")){
             new StudentLeaveDetails();
         }
-
-
-
-
+        else if(msg.equals("Update Faculty Details")){
+            new UpdateTeacher();
+        }
+        else if(msg.equals("Update Student Details")){
+            new UpdateStudent();
+        }
+        else if(msg.equals("Enter Marks")){
+            new EnterMarks();
+        }
+        else if(msg.equals("Examination Results")){
+            new ExaminationDetails();
+        }
+        else if(msg.equals("Fee Strucute")){
+            new FeeStructure();
+        }
+        else if(msg.equals("About")){
+            new About();
+        }
 
 
 
